@@ -1,4 +1,13 @@
-d3-path-finding
+Visualizing Path Finding with D3.js
 ===============
 
-Visualizing path finding algorithms with D3.js.
+To get started pull the repository then execute the following commands:
+(This assumes you have node.js, npm, and bower installed)
+
+$ npm install (from within the root of the repo)
+
+$ bower install
+
+$ node server.js
+
+Then navigate to http://localhost:3000/index.html

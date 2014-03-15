@@ -1,9 +1,10 @@
 requirejs.config(
     {
         paths: {
-            'jQuery': '../js/jquery/src/jquery',
+            'jQuery': '../js/jquery/dist/jquery',
             'underscore': '../js/underscore/underscore',
-			'd3' : '../js/d3/d3'
+			'd3' : '../js/d3/d3',
+            "Q": "../js/q/q",
         },
         shim: {
             'jQuery': {
@@ -16,6 +17,6 @@ requirejs.config(
     }
 );
 
-require(['d3'], function (d3) {
-	console.log(d3.version);
+require(['bootstrapper'], function (bootstrapper) {
+	bootstrapper.start();
 });
