@@ -9,6 +9,16 @@ module.exports = function(grunt) {
 	      { src:"lib/requirejs/require.js", dest:"src/js/require.js" },
 	      { src:"lib/underscore/underscore.js", dest:"src/js/underscore.js" }
 	    ]
+	  },
+	  tests: {
+	  	files: [
+	      { src:"lib/jasmine/lib/jasmine-core/jasmine.js", dest:"tests/lib/jasmine-2.0.0/jasmine.js" },
+	      { src:"lib/jasmine/lib/jasmine-core/boot.js", dest:"tests/lib/jasmine-2.0.0/boot.js" },
+	      { src:"lib/jasmine/lib/jasmine-core/console.js", dest:"tests/lib/jasmine-2.0.0/console.js" },
+	      { src:"lib/jasmine/lib/jasmine-core/jasmine-html.js", dest:"tests/lib/jasmine-2.0.0/jasmine-html.js" },
+	      { src:"lib/jasmine/lib/jasmine-core/jasmine.css", dest:"tests/lib/jasmine-2.0.0/jasmine.css" },
+	      { src:"lib/jasmine/lib/jasmine-core/jasmine_favicon.png", dest:"tests/lib/jasmine-2.0.0/jasmine_favicon.png" }
+	    ]
 	  }
 	}
   });
@@ -17,7 +27,12 @@ module.exports = function(grunt) {
 
   grunt.registerTask(
 	  'build', 
-	  'Compiles all of the assets and copies the files to the build directory.', 
-	  [ 'copy' ]
+	  'Copies JS dependencies to the src/js directory.', 
+	  [ 'copy:build' ]
+	);
+  grunt.registerTask(
+	  'tests', 
+	  'Moves test dependencies to the tests directory.', 
+	  [ 'copy:tests' ]
 	);
 };

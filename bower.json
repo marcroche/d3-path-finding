@@ -1,14 +1,15 @@
 {
-  "name": "d3-path-finding",
-  "version": "0.1.0",
-  "authors": [
-    "Marc Roche <me@marcroche.com>"
-  ],
-  "dependencies": {
-	"requirejs": "2.1.11",
-    "jquery": "1.11.0",
-	"underscore": "1.6.0",
-	"d3": "3.4.3",
-    "q": "1.0.0"
-  }
+    "name" : "d3-path-finding",
+    "version" : "0.1.0",
+    "authors" : [
+        "Marc Roche <me@marcroche.com>"
+    ],
+    "dependencies" : {
+        "requirejs" : "2.1.11",
+        "jquery" : "1.11.0",
+        "underscore" : "1.6.0",
+        "d3" : "3.4.3",
+        "q" : "1.0.0",
+        "jasmine" : "2.0.0"
+    }
 }
