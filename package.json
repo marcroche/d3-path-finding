@@ -1,20 +1,25 @@
 {
-    "name"            : "d3-path-finding"
-  , "version"         : "0.1.0"
-  , "description"     : "Visualizing path finding algorithms with D3.js"
-  , "homepage"        : "https://github.com/marcroche/d3-path-finding"
-  , "keywords"        : ["d3", "JavaScript", "algorithms"]
-  , "author"          : "Marc Roche <me@marcroche.com>"
-  , "main"            : "./index.js"
-  , "dependencies"    : { 
-      "connect"       : "2.4.2"
-  }
-  , "repository"      : {
-      "type"          : "git"
-    , "url"           : "git://github.com/marcroche/d3-path-finding.git"
-  }
-  , "licenses"        : [{
-      "type"          :  "MIT"
-    , "url"           : "http://opensource.org/licenses/mit-license.php"
-  }]
+    "name" : "d3-path-finding",
+    "version" : "0.1.0",
+    "description" : "Visualizing path finding algorithms with D3.js",
+    "homepage" : "https://github.com/marcroche/d3-path-finding",
+    "keywords" : ["d3", "JavaScript", "algorithms"],
+    "author" : "Marc Roche <me@marcroche.com>",
+    "dependencies" : {
+    },
+    "devDependencies" : {
+        "connect" : "2.4.2",
+        "grunt" : "~0.4.4",
+        "grunt-contrib-clean": "0.5.x",
+        "grunt-contrib-copy" : "0.4.x"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/marcroche/d3-path-finding.git"
+    },
+    "licenses" : [{
+            "type" : "MIT",
+            "url" : "http://opensource.org/licenses/mit-license.php"
+        }
+    ]
 }
