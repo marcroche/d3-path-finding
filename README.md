@@ -10,6 +10,8 @@ $ bower install
 
 $ grunt build
 
+$ grunt tests
+
 $ node server.js
 
 Then navigate to http://localhost:3000/index.html

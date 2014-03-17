@@ -10,14 +10,22 @@ module.exports = function(grunt) {
 	      { src:"lib/underscore/underscore.js", dest:"src/js/underscore.js" }
 	    ]
 	  },
-	  tests: {
+	  testDeps: {
 	  	files: [
-	      { src:"lib/jasmine/lib/jasmine-core/jasmine.js", dest:"tests/lib/jasmine-2.0.0/jasmine.js" },
-	      { src:"lib/jasmine/lib/jasmine-core/boot.js", dest:"tests/lib/jasmine-2.0.0/boot.js" },
-	      { src:"lib/jasmine/lib/jasmine-core/console.js", dest:"tests/lib/jasmine-2.0.0/console.js" },
-	      { src:"lib/jasmine/lib/jasmine-core/jasmine-html.js", dest:"tests/lib/jasmine-2.0.0/jasmine-html.js" },
-	      { src:"lib/jasmine/lib/jasmine-core/jasmine.css", dest:"tests/lib/jasmine-2.0.0/jasmine.css" },
-	      { src:"lib/jasmine/lib/jasmine-core/jasmine_favicon.png", dest:"tests/lib/jasmine-2.0.0/jasmine_favicon.png" }
+	      { src:"lib/jasmine/lib/jasmine-core/jasmine.js", dest:"tests/lib/jasmine/jasmine.js" },
+	      { src:"lib/jasmine/lib/jasmine-core/boot.js", dest:"tests/lib/jasmine/boot.js" },
+	      { src:"lib/jasmine/lib/jasmine-core/console.js", dest:"tests/lib/jasmine/console.js" },
+	      { src:"lib/jasmine/lib/jasmine-core/jasmine-html.js", dest:"tests/lib/jasmine/jasmine-html.js" },
+	      { src:"lib/jasmine/lib/jasmine-core/jasmine.css", dest:"tests/lib/jasmine/jasmine.css" },
+	      { src:"lib/jasmine/lib/jasmine-core/jasmine_favicon.png", dest:"tests/lib/jasmine-2.0.0/jasmine_favicon.png" },
+	      { src:"lib/jquery/dist/jquery.js", dest:"tests/lib/jquery.js" },
+	      { src:"lib/underscore/underscore.js", dest:"tests/lib/underscore.js" },
+	      { src:"lib/requirejs/require.js", dest:"tests/lib/require.js" }
+	    ]
+	  },
+	  testSrc: {
+	  	files: [
+	      { src:"src/app/model/MinPriorityQueue.js", dest:"tests/src/model/MinPriorityQueue.js" }
 	    ]
 	  }
 	}
@@ -30,9 +38,10 @@ module.exports = function(grunt) {
 	  'Copies JS dependencies to the src/js directory.', 
 	  [ 'copy:build' ]
 	);
+
   grunt.registerTask(
 	  'tests', 
 	  'Moves test dependencies to the tests directory.', 
-	  [ 'copy:tests' ]
+	  [ 'copy:testDeps', 'copy:testSrc' ]
 	);
 };
