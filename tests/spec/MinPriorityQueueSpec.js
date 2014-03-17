@@ -11,11 +11,6 @@ define(['src/model/MinPriorityQueue'], function(MinPriorityQueue) {
 		});
 
 		it("should be able to push values", function() {
-			//player.play(song);
-			//expect(player.currentlyPlayingSong).toEqual(song);
-
-			//demonstrates use of custom matcher
-			//expect(player).toBePlaying(song);
 		});
 	});
 });
