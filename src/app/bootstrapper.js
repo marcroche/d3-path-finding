@@ -1,8 +1,8 @@
-define(['jQuery', 'model/Grid', 'Visualizer', 'finders/Dijkstra', 'model/Vertex', 'model/Edge'], 
-        function($, Grid, Visualizer, Dijkstra, Vertex, Edge) {
+define(['jQuery', 'model/Grid', 'Visualizer', 'finders/Dijkstra'], 
+        function($, Grid, Visualizer, Dijkstra) {
 
     function start() {
-        var grid = new Grid(25, 35, Vertex, Edge);
+        var grid = new Grid(25, 35);
         var visualizer = new Visualizer('#grid', 25, 35, 20, grid.vertices);
         var dijkstra = new Dijkstra(grid.vertices[1][2], grid.vertices[20][30], visualizer);
         
