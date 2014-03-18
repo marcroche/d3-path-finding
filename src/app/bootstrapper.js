@@ -1,10 +1,9 @@
-define(['jQuery', 'model/Grid', 'Visualizer', 'finders/Dijkstra'], 
-        function($, Grid, Visualizer, Dijkstra) {
+define(['jQuery', 'model/Grid', 'Visualizer', 'finders/Dijkstra'], function($, Grid, Visualizer, Dijkstra) {
 
     function start() {
         var grid = new Grid(25, 35);
-        var visualizer = new Visualizer('#grid', 25, 35, 20, grid.vertices);
-        var dijkstra = new Dijkstra(grid.vertices[1][2], grid.vertices[20][30], visualizer);
+        var visualizer = new Visualizer('#grid', 18, grid);
+        var dijkstra = new Dijkstra(grid.vertices[1][2], grid.vertices[20][30]);
         
         $('#resetButton').click(function reset() {
             for (var i = 0; i < grid.vertices.length; i++) {
@@ -20,7 +19,8 @@ define(['jQuery', 'model/Grid', 'Visualizer', 'finders/Dijkstra'],
             grid.vertices[1][2].cost = 0.0;
             grid.vertices[1][2].isStart = true;
             grid.vertices[20][30].isEnd = true;
-
+            visualizer.isGridReady = false;
+            
             dijkstra.search().progress(function () {
                 visualizer.update();
             }).then(function () {

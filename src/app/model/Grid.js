@@ -47,6 +47,8 @@ define(['model/Vertex', 'model/Edge'], function(Vertex, Edge) {
         findNeighbors();
 
         this.vertices = vertices;
+        this.rows = rows;
+        this.cols = cols;
     };
 
     return api;

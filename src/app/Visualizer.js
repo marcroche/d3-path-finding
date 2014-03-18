@@ -138,12 +138,12 @@ define(['d3', 'model/Vertex', 'model/Edge'], function(d3, Vertex, Edge) {
             .attr("viewBox", "0 0 " + w + " 50");
     }
 
-    var api = function (_id, _rows, _cols, _squareSize, _data) {
+    var api = function (_id, _squareSize, _grid) {
         self = this;
-        data = _data;
+        data = _grid.vertices;
         id = _id;
-        cols = _cols;
-        rows = _rows;
+        cols = _grid.cols;
+        rows = _grid.rows;
         squareSize = _squareSize;
         w = cols * squareSize;
         h = rows * squareSize;
@@ -153,6 +153,7 @@ define(['d3', 'model/Vertex', 'model/Edge'], function(d3, Vertex, Edge) {
         this.update = update;
         this.reset = reset;
         this.complete = complete;
+        this.isGridReady = isGridReady;
     };
 
     return api;
