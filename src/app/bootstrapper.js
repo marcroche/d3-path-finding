@@ -3,7 +3,7 @@ define(['jQuery', 'model/Grid', 'Visualizer', 'finders/Dijkstra'], function($, G
     function start() {
         var grid = new Grid(25, 35);
         var visualizer = new Visualizer('#grid', 18, grid);
-        var dijkstra = new Dijkstra(grid.vertices[1][2], grid.vertices[20][30]);
+        var dijkstra = new Dijkstra();
         
         $('#resetButton').click(function reset() {
             for (var i = 0; i < grid.vertices.length; i++) {
@@ -13,15 +13,17 @@ define(['jQuery', 'model/Grid', 'Visualizer', 'finders/Dijkstra'], function($, G
             }
             visualizer.reset(grid.vertices);
         });
-            
 
         $('#startButton').click(function start() {
-            grid.vertices[1][2].cost = 0.0;
-            grid.vertices[1][2].isStart = true;
-            grid.vertices[20][30].isEnd = true;
+            var startVertex = grid.vertices[1][2];
+            var endVertex = grid.vertices[20][30];
+            
+            startVertex.cost = 0.0;
+            startVertex.isStart = true;
+            endVertex.isEnd = true;
             visualizer.isGridReady = false;
             
-            dijkstra.search().progress(function () {
+            dijkstra.search(startVertex, endVertex).progress(function () {
                 visualizer.update();
             }).then(function () {
                 visualizer.update();

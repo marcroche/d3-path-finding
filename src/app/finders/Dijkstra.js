@@ -28,7 +28,7 @@ define(['Q', 'model/MinPriorityQueue'], function(Q, MinPriorityQueue) {
                 priorityQueue.push(target);
             }
         }
-    };
+    }
 
     function shortestPath(destinationKey) {
         var path = [];
@@ -43,10 +43,14 @@ define(['Q', 'model/MinPriorityQueue'], function(Q, MinPriorityQueue) {
             path.unshift(e);
         }
         return path;
-    };
+    }
 
-    function search() {
+    function search(_startVertex, _endVertex) {
         var deferred = Q.defer();
+        
+        startVertex = _startVertex;
+        endVertex = _endVertex;
+
         priorityQueue.push(startVertex);
         shortestEdges = [];
 
@@ -81,11 +85,9 @@ define(['Q', 'model/MinPriorityQueue'], function(Q, MinPriorityQueue) {
         }, 25);
 
         return deferred.promise;
-    };
+    }
 
-    var api = function (_startVertex, _endVertex) {
-        startVertex = _startVertex;
-        endVertex = _endVertex;
+    var api = function () {
         priorityQueue = new MinPriorityQueue('key', 'cost', []);
 
         this.search = search;
