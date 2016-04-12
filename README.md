@@ -1,6 +1,8 @@
 Visualizing Path Finding with D3.js
 ===============
 
+(Old version of code running: http://jsbin.com/apaXIPA/23)
+
 To get started pull the repository then execute the following commands from within the root of the repo:<br />
 (This assumes you have node, npm, and bower installed)
 
